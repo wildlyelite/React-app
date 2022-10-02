@@ -17,31 +17,14 @@ function handleChange(event) {
 const { value, name } = event.target;
 
 setContact(preValue => {
-if (name === "fName") {
+//Spread operators
 return {
-fName: value,
-lName: preValue.lName,
-email: preValue.email
-}
-} else if (name === "lName") {
-return {
-fName: preValue.fName,
-lName: value,
-email: preValue.email
-}
-} else if (name === "email") {
-return {
-fName: preValue.fName,
-lName: preValue.lName,
-email: value
-}
-}
+    ...preValue,
+    [name]: value
 
+};
 
-
-
-
-})
+});
 
 
 }
